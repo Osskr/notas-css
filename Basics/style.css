@@ -1,0 +1,13 @@
+h1{
+    font-family: serif;
+    color: red;
+}
+
+#page-title{
+    font-family: sans-serif;
+    color: blue;
+}
+.title{
+    font-family: monospace;
+
+}
