@@ -1,11 +1,28 @@
 h1{
-    font-family: serif;
-    color: red;
+    color: #2f4f4f;
+    margin-bottom: 10px;
 }
 
-#page-title{
-    font-family: sans-serif;
-    color: blue;
+.nav{
+    margin-top: 10px;
+    list-style:none;
+    padding-left: 0;
+}
+.nav li {
+    display: inline-block;
+}
+
+.nav a {
+color: white;
+background-color: #13a4a4;
+padding: 5px;
+border-radius: 5px;
+text-decoration: none;
+
+}
+
+.nav .featured{
+    background-color:orange;
 }
 .title{
     font-family: monospace;
