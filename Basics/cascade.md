@@ -1,4 +1,6 @@
-# La cascada en css
+# Cascada
+
+## La cascada en css
 
 La cascada en CSS nos sirve para predecir como se van a aplicar las reglas que definimos en el navegador, cuando 2 o mas reglas apuntan a al mismo elemento de la pagina, podemos llegar a tener un conflicto con la regla que se vaya a aplicar.
 
@@ -15,7 +17,7 @@ h1{
     font-family: serif;
 }
 
-#page-title{
+##page-title{
     font-family: sans-serif;
 }
 .title{
@@ -42,7 +44,7 @@ Cuando tenemos conflictos con nuestras declaraciones la cascada considera 3 aspe
 
 Las reglas de la cascada se aplican como en el grafico que vemos arriba.
 
-## Origen de la hoja de estilos
+### Origen de la hoja de estilos
 
 Los estilos que definimos en nuestra hoja de estilo no son los unicos que el navegador aplica, tenemos diferentes tipos de estilos. Los *estilos de autor* son los definidos por nosotros mismos y los *user agent styles* son los estilos que vienen por defecto en el navegador. los user agent styles tienen menor prioridad que los estilos de autor, por lo tanto son sobre escritos por estos ultimos.
 
@@ -68,7 +70,7 @@ estas declaraciones son tratadas como *higher-priority-origin*, entonces en este
 2. Author
 3. User Agent
 
-## Especificidad del selector
+### Especificidad del selector
 
 Si los conflictos en las declaraciones no pueden ser resueltos mediante el origen de la hoja de estilos, el navegador intentara resolverlos mediante la *especificidad*.
 El navegador evalua la *especificidad* en 2 partes: Estilos aplicados en el HTML y estilos aplicados usando un selector.
@@ -147,4 +149,82 @@ Una forma comun de especificar la especificidad es utilizando numeros separados 
 
 Ahora se hace muy sencillo encontrar al elemento con mas especificidad, solo tenemos que mirar en la tabla.
 
-## Orden del codigo
+### Orden del codigo
+
+El ultimo paso para resolver la cascada es el orden del codigo. Si el origen y la especificidad son las mismas, entonces la declaracion que aparezca despues en la hoja de estilos, o si la declaracion se encuentra en una hoja de estilos que fue agregada despues, entonces tendra prioridad.
+
+```css
+.nav a {
+color: white;
+background-color: #13a4a4;
+padding: 5px;
+border-radius: 5px;
+text-decoration: none;
+
+}
+
+a.featured{
+    background-color:orange;
+}
+```
+
+En este ejemplo las especificidades son iguales, el orden del codigo es el que determina cual declaracion es aplicada a nuestro link ( en este caso la segunda)
+
+### Estilos de links y orden del codigo
+
+Los estilos para los links deben seguir un cierto orden ya que esto afecta a la cascada, el orden que se debe seguir es el siguiente:
+
+```css
+a:link{
+    color:blue;
+    text-decoration:none;
+}
+
+a:visited{
+    color:purple;
+}
+a:hover{
+    text-decoration:underline;
+}
+a:active{
+    color:red;
+}
+```
+
+dado a que tienen la misma especificidad, el orden es el que importa, los ultimos estilos son los que sobreescriben a los primeros, una manera mnemotecnica de recordar esto es usando la relacion LoVe/HAte *Link, Visited,Hover,Active*
+
+### Reglas utiles
+
+Hay dos reglas comunes para el trabajo con la cascada que pueden ser muy utiles
+
+1. *No usar ID's en tus selectores*, Un solo selector de ID puede aumentar de manera significativa la especificidad. Cuando necesitamos sobreescribir el selector, comunmente no tenemos otro ID  para utilizar, entonces terminamos usando una copia del original y agregando una clase para distinguirlo del que estamos tratando de sobreescribir.
+
+2. *No usar !important*, esto es incluso mas dificil de sobreescribir que  un ID, y una vez que lo usamos debemos agregarlo cada vez que queramos sobreescribir la declaracion original y todavia tenemos que lidiar con la especificidad.
+
+Estas dos reglas son un buen consejo y funcionan la mayoria del tiempo, aunque pueden existir algunas excepciones.
+
+## Herencia
+
+Existe otra manera en que un elemento puede recibir estilos: mediante la *herencia*. La cascada esta a menudo combinada con la herencia, pero aunque estos terminos esten relacionados debemos tener un claro entendimiento de como funcionan por separado.
+
+Si un elemento no tiene un valor de cascada para una propiedad dada, puede heredarla de el elemento ancestro. Es comun aplicar *font-family* al elemento \<body> , de esa manera todos los elementos hijos tendran esta fuente y de esa manera no tendremos que aplicarla a todos los elementos por separado.
+
+!["basics-inheritance-1"]( ../resources/basics-inheritance-1.png)
+
+No todas las propiedades son heredadas, solo algunas, pero en general son las propiedades que quisieramos heredar. La mayoria de ellas son propiedades pertenecientes al texto
+
+```css
+color , font , font-family , font-size , font-weight , font-variant ,
+font-style , line-height , letter-spacing , text-align , text-indent , text-transform ,
+white-space , word-spacing .
+```
+
+ y otras pocas pertenecientes a las listas, como:
+
+ ```css
+ list-style , list-style-type , list-style-position ,list-style-image.
+  ```
+
+  La herencia sera pasada de elemento a elemento hasta que sea sobre escrita por un valor de cascada
+
+  
