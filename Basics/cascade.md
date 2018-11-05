@@ -61,6 +61,7 @@ Hay una excepcion al origen de la hoja de estilos: las declaraciones que son mar
 ```css
 color: red !important;
 ```
+
 estas declaraciones son tratadas como *higher-priority-origin*, entonces en este caso el conjunto de prioridades queda definido de la siguiente manera:
 
 1. Author Important
