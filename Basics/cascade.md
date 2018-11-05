@@ -35,9 +35,7 @@ Este conjunto de reglas lo llamamos *cascada* y determina como se van a resolver
 Cuando tenemos conflictos con nuestras declaraciones la cascada considera 3 aspectos para resolver las diferencias.
 
 1. *Origen de la hoja de Estilos*: de donde provienen los estilos que estamos aplicando. nuestros estilos son aplicados en conjuncion con los que trae el navegador por defecto.
-
 2. *especificidad del selector*: Que selectores toman predominancia sobre otros.
-
 3. *Orden del codigo* : El orden en que los estilos son declarados en la hoja de estilos.
 
 !["basics-cascade-1"]( ../resources/basics-cascade-1.png)
@@ -223,7 +221,7 @@ white-space , word-spacing .
 
  ```css
  list-style , list-style-type , list-style-position ,list-style-image.
-  ```
+ ```
 
   La herencia sera pasada de elemento a elemento hasta que sea sobre escrita por un valor de cascada
 
