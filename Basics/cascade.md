@@ -225,7 +225,7 @@ white-space , word-spacing .
 
   La herencia sera pasada de elemento a elemento hasta que sea sobre escrita por un valor de cascada (*cascaded value*)
 
->*cascaded value* — Un valor para una propiedad en particular, aplicada a un elemento como resultado de la cascada.
+>*cascaded value* — Un valor para una propiedad en particular, aplicada a un elemento como resultado de la cascada
 
 ## Valores Especiales
 
@@ -233,3 +233,60 @@ Hay 2 valores especiales que podemos aplicar a cualquier propiedad para modifica
 
 ### Inherit
 
+Alguna vez quizas necesitemos que la herencia tome lugar, cuando un valor de cascascada lo esta previniendo. Para esto podemos utilizar la palabra reservada *inherit*. Esto sobreescrebira el valor que estaba dado por la cascada y tomara el valor de su padre
+
+```css
+.footer a {
+    color:inherit;
+    text-decoration:underline;
+}
+```
+
+esto va a heredar los colores de fuente de la clase footer para los links que esten dentro. El beneficio es que el color de los links cambiara directamente cuando cambiemos el color del padre (en este caso \<footer>)
+
+### Initial
+
+En algun momento quizas necesitemos que los estilos aplicado a un elemento sean descartados. Podemos hacer esto utilizando *initial* . Cada propiedad de css tiene un valor inicial o por defecto. Cuando  usamos *initial* efectivamente devolvemos la propiedad a su estado inicial.
+
+```css
+.footer a {
+    color:initial;
+    text-decoration:underline;
+}
+```
+
+en este caso el link tomara el color negro que es el que tienen la mayoria de los navegadores por defecto. Tener en cuenta que *initial* va reestablecer el valor de la propiedad a su estado inicial, no, el estado del elemento
+
+## Propiedades atajo (shorthands properties)
+
+Las propiedades atajo son propiedades que nos permiten definir el valor de varias propiedades de una sola vez. por ejemplo la propiedad *font* que nos permite definir varias propiedades para las fuentes es un atajo para *font-style ,font-weight, font-size, line-height, font-family*  
+
+```css
+font: italic bold 18px/1.2 "Helvetica", "Arial", sans-serif;
+```
+
+### Cuidado con shorthands que sobreescriben otros estilos
+
+La mayoria de las propiedades atajo nos permiten omitir valores y solo especificar las que necesitamos modificar. Pero es importante saber que aunque los omitamos igualmente estos valores son sobreescritos y esto puede sobreescribir valores que hayamos definido previamente. el shorthand font es el que puede producir mas errores en este sentido. si bien las propiedades atajo son muy buenas porque nos permiten tener nuestro codigo mas limpio, debemos tener cuidado con estos detalles.
+
+### Entendiendo el orden de los shorthands
+
+Las propiedades atajo tienden a ser permisivas con el orden en que le pasamos los valores de las propiedades, por ejemplo podemos hacer:
+
+```css
+border: 1px solid black
+```
+
+o tambien:
+
+```css
+border: black 1px solid
+```
+
+y las dos van a funcionar correctamente, esto es porque el navegador tiene claro que valor asignar a cada propiedad. Pero hay ciertos casos donde estos valores pueden ser ambiguos, en esos casos debemos respetar cierto orden
+
+#### Top, Right, Bottom Left
+
+Las propiedades atajo tienden a confundirnos cuando se trata de *padding* y *margin*  o algunas propiedades de bordes. para estas propiedades los valores empiezan en top y siguen una forma horaria hacia right bottom y left. Tambien es de ayuda recordar la palabra *TRouBLe* 
+
+estas propiedades tambien soportan valores truncados , si la declaracion termina antes de que se especifique un valor de los lados , ese lado toma el valor de su opuesto, si especificamos tres valores el lado izquierdo tomara el valor de la derecha , si especificamos dos valores el top y bottom usaran el primero de los 2 y por ultimo si especificamos un solo valor este se usara en las 4 propiedades.
