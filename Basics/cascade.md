@@ -223,6 +223,13 @@ white-space , word-spacing .
  list-style , list-style-type , list-style-position ,list-style-image.
  ```
 
-  La herencia sera pasada de elemento a elemento hasta que sea sobre escrita por un valor de cascada
+  La herencia sera pasada de elemento a elemento hasta que sea sobre escrita por un valor de cascada (*cascaded value*)
 
-  
+>*cascaded value* — Un valor para una propiedad en particular, aplicada a un elemento como resultado de la cascada.
+
+## Valores Especiales
+
+Hay 2 valores especiales que podemos aplicar a cualquier propiedad para modificar el valor de la cascada: *inherit*  y *initial*
+
+### Inherit
+
