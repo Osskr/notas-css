@@ -28,5 +28,45 @@ text-decoration: none;
 }
 .title{
     font-family: monospace;
+}
 
+.padded{
+    font-size: 20px;
+    background-color: aqua;
+    border: 1px solid black;
+    padding: 1em;
+}
+
+.box{
+    display: inline-block;
+    border-radius: .5em;
+    padding: .8em;
+    border: .3em solid red;
+}
+
+.box-small{
+    font-size: 8px;
+}
+
+.box-medium{
+    font-size: 16px;
+}
+
+.box-large{
+    font-size: 32px;
+}
+
+body{
+    font-size: 16px;
+}
+
+.slogan{
+    font-size:1.5em;
+}
+
+.box2{
+    display: inline-block;
+    font-size: 1.2em;
+    padding: 1.2em;
+    border: .6em solid cyan;
 }
