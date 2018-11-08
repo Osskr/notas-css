@@ -287,6 +287,6 @@ y las dos van a funcionar correctamente, esto es porque el navegador tiene claro
 
 #### Top, Right, Bottom Left
 
-Las propiedades atajo tienden a confundirnos cuando se trata de *padding* y *margin*  o algunas propiedades de bordes. para estas propiedades los valores empiezan en top y siguen una forma horaria hacia right bottom y left. Tambien es de ayuda recordar la palabra *TRouBLe* 
+Las propiedades atajo tienden a confundirnos cuando se trata de *padding* y *margin*  o algunas propiedades de bordes. para estas propiedades los valores empiezan en top y siguen una forma horaria hacia right bottom y left. Tambien es de ayuda recordar la palabra *TRouBLe*
 
 estas propiedades tambien soportan valores truncados , si la declaracion termina antes de que se especifique un valor de los lados , ese lado toma el valor de su opuesto, si especificamos tres valores el lado izquierdo tomara el valor de la derecha , si especificamos dos valores el top y bottom usaran el primero de los 2 y por ultimo si especificamos un solo valor este se usara en las 4 propiedades.
