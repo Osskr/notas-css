@@ -1,12 +1,12 @@
 # Trabajando con unidades relativas
 
-Cuando se trata de especificar valores, CSS nos ofrece una amplia gama de opciones. Una de las mas familiares y probablemente la mas facil de usar son los *pixeles*, estas son llamadas unidades *absolutas* . Otras unidades como *em* y *rem* son *relativas* el valor de estas cambia respecto a valores externos.
+Cuando se trata de especificar valores, CSS nos ofrece una amplia gama de opciones. Una de las mas familiares y probablemente la mas fácil de usar son los *pixeles*, estas son llamadas unidades *absolutas* . Otras unidades como *em* y *rem* son *relativas* el valor de estas cambia respecto a valores externos.
 
 ## El poder de los valores relativos
 
 ### Ems y Rems
 
-Los ems son las unidades de medidas relativas mas comunes, son unidades utilizadas en tipografia, referidos a un tamano en especifico, en CSS *1em* significa el tamano de fuente del elemento actual. Su tamano exacto varia dependiendo del elemento al cual se lo estamos aplicando.
+Los ems son las unidades de medidas relativas mas comunes, son unidades utilizadas en tipografía, referidos a un tamaño en especifico, en CSS *1em* significa el tamaño de fuente del elemento actual. Su tamaño exacto varia dependiendo del elemento al cual se lo estamos aplicando.
 
 ```css
 .padded{
@@ -19,9 +19,9 @@ Los ems son las unidades de medidas relativas mas comunes, son unidades utilizad
 
 Este padding tiene un valor de 1em, el cual al ser procesado por el navegador multiplicara ese valor por el valor de la fuente de elemento y nos da como resultado un valor computado de 20px. Los valores relativos siempre son computados por el navegador y nos devuelven un valor absoluto.
 
-Utilizar ems puede resultarnos muy conveniente cuando estamos seteando propiedades como *padding, height,width,border-radius* porque estos escalaran de forma proporcional, incluso si el elemento hereda diferentes tipos de fuentes, o si el usuario cambia el tamano de las fuentes.
+Utilizar ems puede resultarnos muy conveniente cuando estamos seteando propiedades como *padding, height,width,border-radius* porque estos escalaran de forma proporcional, incluso si el elemento hereda diferentes tipos de fuentes, o si el usuario cambia el tamaño de las fuentes.
 
-Por ejemplo utilizando ems podemos definir unas cajas que adapten su padding dependiendo del tamano de fuente
+Por ejemplo utilizando ems podemos definir unas cajas que adapten su padding dependiendo del tamaño de fuente
 
 ```css
 .box{
@@ -32,7 +32,7 @@ Por ejemplo utilizando ems podemos definir unas cajas que adapten su padding dep
 }
 ```
 
-y entonces ahora si agregamos unos estilos que cambien nuestra fuente, podemos facilmente modificar el tamano de nuestras cajas
+y entonces ahora si agregamos unos estilos que cambien nuestra fuente, podemos fácilmente modificar el tamaño de nuestras cajas
 
 ```css
 .box-small{
@@ -48,13 +48,13 @@ y entonces ahora si agregamos unos estilos que cambien nuestra fuente, podemos f
 }
 ```
 
-y asi obtendremos el siguiente resultado:
+y así obtendremos el siguiente resultado:
 
 !["basics-relativeunits-1"]( ../resources/basics-relativeunits-1.png)
 
-#### Utilizando ems para definir tamanos de fuentes
+#### Utilizando ems para definir tamaños de fuentes
 
-Cuando se trata de la propiedad *font-size* los ems se comportan de manera diferente, como dijimos los ems  estan definidos por el tamano de fuente actual, pero que sucede si declaramos el tamano de fuente como 1.2 em ?. El tamano de fuente no puede ser 1.2 veces su tamano. Entonces lo que sucede en este caso es para calcular el valor absoluto del tamano de fuente, se va a utilizar la fuente heredada, veamos lo en un ejemplo.
+Cuando se trata de la propiedad *font-size* los ems se comportan de manera diferente, como dijimos los ems  están definidos por el tamaño de fuente actual, pero que sucede si declaramos el tamaño de fuente como 1.2 em ?. El tamaño de fuente no puede ser 1.2 veces su tamaño. Entonces lo que sucede en este caso es para calcular el valor absoluto del tamaño de fuente, se va a utilizar la fuente heredada, veamos lo en un ejemplo.
 
 ```css
 body{
@@ -66,13 +66,13 @@ body{
 }
 ```
 
-la clase slogan va asignar un tamano de fuente de 1.5 veces el tamano de body esto es 24px
+la clase slogan va asignar un tamaño de fuente de 1.5 veces el tamaño de body esto es 24px
 
-> En la mayoria de los navegadores el tamano predeterminado de una fuente es de 16px
+> En la mayoría de los navegadores el tamaño predeterminado de una fuente es de 16px
 
 #### Ems para *font-size* junto con ems para otros propiedades
 
-Ya utilizamos ems para definir el padding de un elemento y ems para definir el tamano de una fuente, pero que sucede cuando queremos utilizarlos de manera simultanea en un solo elemento?.
+Ya utilizamos ems para definir el padding de un elemento y ems para definir el tamaño de una fuente, pero que sucede cuando queremos utilizarlos de manera simultanea en un solo elemento?.
 
 ```css
 .box2{
@@ -81,11 +81,12 @@ Ya utilizamos ems para definir el padding de un elemento y ems para definir el t
     border: .5 em solid red;
 }
 ```
-en este caso lo que sucede es que primero se calcula el tamano de la fuente utilizando los ems que le especificamos (1.2) y el tamano de fuente heredado (16px del \<body>)
-entonces obtenemos un tamano absoluto de 19,2px, luego se utiliza ese valor junto con el valor en ems del padding y el border, para obtener sus valores computados, para este ejemplo obtendriamos padding: 23.033px y border: 9px.
 
->nota para el futuro, el valor del padding obtenido para el borde deberia ser 9,6px pero el navegador para esta propiedad solo acepta valores enteros y lo trunca a 9px.
+en este caso lo que sucede es que primero se calcula el tamaño de la fuente utilizando los ems que le especificamos (1.2) y el tamaño de fuente heredado (16px del \<body>)
+entonces obtenemos un tamaño absoluto de 19,2px, luego se utiliza ese valor junto con el valor en ems del padding y el border, para obtener sus valores computados, para este ejemplo obtendríamos padding: 23.033px y border: 9px.
+
+>nota para el futuro, el valor del padding obtenido para el borde debería ser 9,6px pero el navegador para esta propiedad solo acepta valores enteros y lo trunca a 9px.
 
 #### Problema con el encogimiento de la fuentes
 
-Los ems pueden producir problemas cuando los utilizamos para definir el tamano de las fuentes de elementos anidados. Para saber el valor exacto de cada elemento , tendremos que conocer el tamano de su fuente heredada, la cual esta definida en el padre mediante ems que a su vez necesitara saber el tamano de su fuente heredada y asi sucesivamente.
+Los ems pueden producir problemas cuando los utilizamos para definir el tamaño de las fuentes de elementos anidados. Para saber el valor exacto de cada elemento , tendremos que conocer el tamaño de su fuente heredada, la cual esta definida en el padre mediante ems que a su vez necesitara saber el tamaño de su fuente heredada y así sucesivamente.
