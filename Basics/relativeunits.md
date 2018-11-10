@@ -89,4 +89,68 @@ entonces obtenemos un tamaño absoluto de 19,2px, luego se utiliza ese valor jun
 
 #### Problema con el encogimiento de la fuentes
 
-Los ems pueden producir problemas cuando los utilizamos para definir el tamaño de las fuentes de elementos anidados. Para saber el valor exacto de cada elemento , tendremos que conocer el tamaño de su fuente heredada, la cual esta definida en el padre mediante ems que a su vez necesitara saber el tamaño de su fuente heredada y así sucesivamente.
+Los ems pueden producir problemas cuando los utilizamos para definir el tamaño de las fuentes de elementos anidados. Para saber el valor exacto de cada elemento , tendremos que conocer el tamaño de su fuente heredada, la cual esta definida en el padre mediante ems, que a su vez necesitara saber el tamaño de su fuente heredada y así sucesivamente.
+
+por ejemplo sucede en este caso:
+
+```css
+body{
+    font-size:16px
+}
+ul{
+    font-size: .8em;
+}
+```
+
+```html
+
+    <ul>
+        <li> Top Level
+            <ul>
+                <li> Second Level 
+                    <ul>
+                        <li>Third Level</li>
+                        <li>Third level</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+```
+
+cada elemento de la lista tendra 0.8 veces el tamano de la fuente heredada de su padre.
+
+una forma para solucionar este problema de encogimiento  es con el siguiente codigo
+
+```css
+ul{
+    font-size: .8em
+}
+ul ul{
+    font-size: 1em
+}
+```
+
+esto va a solucionar nuestro problema, pero no es la manera mas ideal, porque estamos asignado un valor e inmediatamente sobrescribiendolo con otra regla, seria mejor si tenemos una herramienta que solucione el problema sin tener que aumentar la especifidad de un selector. Por suerte si tenemos otra opcion y son los *rems*
+
+### Utilizando rems para el tamano de fuente
+
+Cuando el navegador  parsea un documento HTML, crea una representacion en memoria de todos los elementos en la pagina. A esta representacion la llamamos DOM, es una estructura de arbol donde cada elemento es representado por un nodo. El  nodo \<html> se encuentra en el nivel superior del arbol (o raiz), debajo se encuentran sus hijos \<head> y \<body> y debajo de estos sus hijos e hijos de hijos y asi sucesivamente.
+
+El nodo raiz que es el ancestro de todos los elementos del documento, tiene un selector especial de pseudoclase *( :root )* que podemos utilizar para alcanzarlo, esto es similar a utilizar el selector de etiqueta *html* pero con la especificidad de una pseudoclase en vez de la de una etiqueta.
+
+Rem es un acronimo para *Root Em*, a diferencia de ser relativos al elemento que los contiene los Rems son relativos al nodo raiz *(html)*. No importa donde lo apliquemos 1.2 rem tienen el mismo valor computado en todo el documento: 1.2 veces el tamano de fuente del elemento raiz
+
+ ```css
+ :root{
+     font-size: 1em;
+ }
+ ul{
+    font-size: .8rem; 
+ }
+ ```
+
+ en el ejemplo superior, el tamano de fuente del elemento raiz es 16px (*un em definido en el root es equivalente al tamano de fuente del navegador por defecto*) *ul* tiene un tamano especificado de .8rem por lo que siempre se calculara como 12.8px porque al ser relativo a la raiz, el tamano permanecera constante a pesar de estar anidado.
+
+ 
