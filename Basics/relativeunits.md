@@ -107,7 +107,7 @@ ul{
     <ul>
         <li> Top Level
             <ul>
-                <li> Second Level 
+                <li> Second Level
                     <ul>
                         <li>Third Level</li>
                         <li>Third level</li>
@@ -147,10 +147,55 @@ Rem es un acronimo para *Root Em*, a diferencia de ser relativos al elemento que
      font-size: 1em;
  }
  ul{
-    font-size: .8rem; 
+    font-size: .8rem;
  }
  ```
 
  en el ejemplo superior, el tamano de fuente del elemento raiz es 16px (*un em definido en el root es equivalente al tamano de fuente del navegador por defecto*) *ul* tiene un tamano especificado de .8rem por lo que siempre se calculara como 12.8px porque al ser relativo a la raiz, el tamano permanecera constante a pesar de estar anidado.
 
- 
+### Unidades relativas ViewPort
+
+Ya sabemos que los ems y rems son unidades relativas, pero estas no son las unicas. Tambien existen las *Unidades relativas ViewPort* para definir unidades que sean relativas al viewport del browser
+
+>*viewPort*-- es el area enmarcada en la ventana del navegador donde la pagina web es visible. Excluye si se encuentran presentes la zona de barras de navegacion, direccion, status, herramientas, etc.
+
+#### Una breve explicacion sobre viewPorts
+
+* *vh* - es equivalente al 1% del height del viewport.
+* *vw* - es equivalente al 1% del width del viewport.
+* *vmin* - es equivalente al 1% de la dimension mas pequena ya sea height o width.
+* *vmax* - es equivalente al 1% de la dimension mas grande ya sea height o width.
+
+por ejemplo un 50vh sera equivalente a la mitad de la altura del viewport y *vmin* estara basando en cual de los 2 (ancho o alto) sea mas pequeno
+
+el siguiente codigo muestra un cuadrado que se vera igual en diferentes tamanos de viewports
+
+```css
+.square{
+    width: 50vmin;
+    height: 50vmin;
+    background-color: blue;
+}
+```
+
+las unidades relativas de longitud son ideales para cuando queremos una imagen que llene el tamano completo de nuestra pantalla, sin saber de antemano cual va a ser ese tamano
+
+#### Utilizando vw para tamano de fuente
+
+una aplicacion para las *unidades relativas viewport* que no es inmediatamente obvia es el tamano de fuente.
+
+Consideremos que sucederia si aplicamos a la propiedad *font-size* un  valor de 2vw. En un monitor de 1200px, esto se evaluaria a 24px (2% de 1200). En una tablet con un ancho de pantalla de 768px esto serian 15px. y lo bueno seria que el elemento se escalaria de manera mas suave sin ningun cambio abrupto entre los 2 tamanos. 
+Desafortunadamente 24px es un tamano muy grande en una pantalla de 1200px y seria muy pequeno en caso de un telefono. Seria algo muy util si podriamos manejar ese rango de valores pero sin llegar los extremos de muy pequeno o muy grande, para esto podemos usar la funcion de CSS *calc( )*
+
+#### Utilizando la funcion Calc() para font-size
+
+la funcion *calc()* nos permite hacer operaciones aritmeticas  basicas entre 2 valores. Esta es muy util para combinar valores de medidas que estan tomados en diferentes unidades por ejemplo *calc( 10px + 1em)*, entonces para resolver la situacion planteada anteriormente, podemos utilizar calc() de la siguiente manera para combinar vw y ems
+
+```css
+:root{
+    font-size: calc(0.5em + 1vw);
+}
+```
+ahora si vamos lentamente escalando el tamano de nuestro navegador veremos que la fuente escala suavemente. el 0.5em actua como una suerte de tamano minimo de la fuente y el 1vw hace escalar la fuente responsivamente a medida que aumenta el ancho de nuestra ventana. esto no daria un tamano de fuente minima de 11,75px en un telefono como un iphone 6 y un tamano de 20px en un monitor de 1200px. podemos ir ajustando estos valores de la manera que nos sea mas conveniente.
+
+De esta manera logramos tener un texto que sea responsivo sin tener que utilizar media queries y sin tener saltos abruptos entre tamano y tamano.

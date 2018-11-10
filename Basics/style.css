@@ -1,3 +1,7 @@
+:root{
+    font-size: 0.875em;
+}
+
 h1{
     color: #2f4f4f;
     margin-bottom: 10px;
@@ -56,9 +60,7 @@ text-decoration: none;
     font-size: 32px;
 }
 
-body{
-    font-size: 16px;
-}
+
 
 .slogan{
     font-size:1.5em;
@@ -69,4 +71,28 @@ body{
     font-size: 1.2em;
     padding: 1.2em;
     border: .6em solid cyan;
+}
+
+.panel{
+    padding: .5em;
+    border: .1em solid black;
+    margin: .2em;
+    border-radius: .5em;
+    font-size: 1rem;
+}
+.panel > h2{
+    margin: .2em 0;
+    font-size: .8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.panel-large{
+    font-size: 1.5rem;
+}
+
+.square{
+    width: 50vmin;
+    height: 50vmin;
+    background-color: blue;
 }
