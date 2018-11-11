@@ -196,6 +196,44 @@ la funcion *calc()* nos permite hacer operaciones aritmeticas  basicas entre 2 v
     font-size: calc(0.5em + 1vw);
 }
 ```
+
 ahora si vamos lentamente escalando el tamano de nuestro navegador veremos que la fuente escala suavemente. el 0.5em actua como una suerte de tamano minimo de la fuente y el 1vw hace escalar la fuente responsivamente a medida que aumenta el ancho de nuestra ventana. esto no daria un tamano de fuente minima de 11,75px en un telefono como un iphone 6 y un tamano de 20px en un monitor de 1200px. podemos ir ajustando estos valores de la manera que nos sea mas conveniente.
 
 De esta manera logramos tener un texto que sea responsivo sin tener que utilizar media queries y sin tener saltos abruptos entre tamano y tamano.
+
+## Numeros sin unidades y line-height
+
+Algunas propiedades como *line-height, z-index, font-weight* aceptan valores numericos sin unidades, ademas podemos usar el valor sin unidad 0 siempre que especifiquemos una unidad de longitud como px,em, o rem. No podemos usar el 0 sin unidad en propiedades donde tengamos que especificar angulos o intervalos de tiempo.
+
+La propiedad *line-height* es un tanto inusual en este sentido porque acepta tanto unidades sin valor como unidades con valor. pero debemos usar los valores sin unidad porque se heredan de manera distinta. si especificamos unidades como ems en nuestro line-heigth podemos tener problema de solapamiento
+
+
+## Propiedades customizadas (Variables CSS)
+
+Para definir una variable en css la declaramos como si fuera una propiedad
+
+```css
+:root{
+    --main-font:Helvetica, Arial, sans-serif;
+}
+```
+
+esto define una variable llamada *--main-font* y le da un valor con determinadas fuentes, es obligatorio que el nombre de cada variable empiece con *( - - )* para distinguirla de otras propiedades de CSS , seguidas del nombre que sea mas conveniente.
+
+Las variables deben estar declaradas dentro de un bloque de declaracion,al usar el selector *:root* esto deja la variable disponible para todo el documento.
+
+Por si misma una declaracion de variable no hace nada hasta que la utilicemos, para eso hacemos lo siguiente:
+
+```css
+p{
+    font-family: var(--main-font);
+}
+```
+
+La funcion llamada *var( )* es la que nos permite usar nuestra variable.
+
+la funcion *var()* tambien acepta un segundo parametro por si el valor de la variable que le pasamos no estaba definido
+
+`var(--mi-var,fallback-value);`
+
+>Nota: si la funcion var() evalua un valor invalido , la propiedad sera seteada con su valor inicial.
