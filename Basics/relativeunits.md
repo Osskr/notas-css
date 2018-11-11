@@ -184,7 +184,7 @@ las unidades relativas de longitud son ideales para cuando queremos una imagen q
 
 una aplicacion para las *unidades relativas viewport* que no es inmediatamente obvia es el tamano de fuente.
 
-Consideremos que sucederia si aplicamos a la propiedad *font-size* un  valor de 2vw. En un monitor de 1200px, esto se evaluaria a 24px (2% de 1200). En una tablet con un ancho de pantalla de 768px esto serian 15px. y lo bueno seria que el elemento se escalaria de manera mas suave sin ningun cambio abrupto entre los 2 tamanos. 
+Consideremos que sucederia si aplicamos a la propiedad *font-size* un  valor de 2vw. En un monitor de 1200px, esto se evaluaria a 24px (2% de 1200). En una tablet con un ancho de pantalla de 768px esto serian 15px. y lo bueno seria que el elemento se escalaria de manera mas suave sin ningun cambio abrupto entre los 2 tamanos.
 Desafortunadamente 24px es un tamano muy grande en una pantalla de 1200px y seria muy pequeno en caso de un telefono. Seria algo muy util si podriamos manejar ese rango de valores pero sin llegar los extremos de muy pequeno o muy grande, para esto podemos usar la funcion de CSS *calc( )*
 
 #### Utilizando la funcion Calc() para font-size
@@ -206,7 +206,6 @@ De esta manera logramos tener un texto que sea responsivo sin tener que utilizar
 Algunas propiedades como *line-height, z-index, font-weight* aceptan valores numericos sin unidades, ademas podemos usar el valor sin unidad 0 siempre que especifiquemos una unidad de longitud como px,em, o rem. No podemos usar el 0 sin unidad en propiedades donde tengamos que especificar angulos o intervalos de tiempo.
 
 La propiedad *line-height* es un tanto inusual en este sentido porque acepta tanto unidades sin valor como unidades con valor. pero debemos usar los valores sin unidad porque se heredan de manera distinta. si especificamos unidades como ems en nuestro line-heigth podemos tener problema de solapamiento
-
 
 ## Propiedades customizadas (Variables CSS)
 
