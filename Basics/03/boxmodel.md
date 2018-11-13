@@ -100,3 +100,5 @@ La mejor manera para resolver un centrado vertical puede depender de varios fact
 
 ## Margenes negativos
 
+A diferencia del padding y el ancho de borde, podemos asignar valores negativos a los margenes. Esto tiene algunos usos peculiares tales como permitir a los elementos que se solapen o hacerlos mas estrechos respecto de su contenedor.
+El comportamiento exacto va a depender del lugar del elemento en el que apliquemos el margen negativo. Si lo aplicamos a la izquierda o en el la parte superior , el elemento se va movera hacia a la izquierda o hacia arriba respectivamente. Esto puede causar que haya un solapamiento si hay otro elemento en ese lugar. Si lo aplicamos a la derecha o a la parte inferior del elemento, este no va a cambiar su posicion pero va arrastrar hacia el cualquier elemento vecino. Darle a un elemento un margen negativo en el  bottom no es diferente a darle a un elemento que esta debajo un margen negativo en el top.
