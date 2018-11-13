@@ -102,3 +102,25 @@ La mejor manera para resolver un centrado vertical puede depender de varios fact
 
 A diferencia del padding y el ancho de borde, podemos asignar valores negativos a los margenes. Esto tiene algunos usos peculiares tales como permitir a los elementos que se solapen o hacerlos mas estrechos respecto de su contenedor.
 El comportamiento exacto va a depender del lugar del elemento en el que apliquemos el margen negativo. Si lo aplicamos a la izquierda o en el la parte superior , el elemento se va movera hacia a la izquierda o hacia arriba respectivamente. Esto puede causar que haya un solapamiento si hay otro elemento en ese lugar. Si lo aplicamos a la derecha o a la parte inferior del elemento, este no va a cambiar su posicion pero va arrastrar hacia el cualquier elemento vecino. Darle a un elemento un margen negativo en el  bottom no es diferente a darle a un elemento que esta debajo un margen negativo en el top.
+
+Cuando un elemento de bloque no tiene especificado un ancho, naturalmente rellena el ancho de su contenedor. Con los margenes negativos podemos cambiar esto , mientras el ancho no este definido el elemento se corre a la izquierda saliendo fuera del contenedor.
+
+>**Nota** Usar margenes negativos puede superponer elementos y hacer que sea imposible de hacer click en ellos si quedan totalmente debajo de otro elemento.
+
+Los margenes negativos no son usados a menudo pero pueden ser utiles en algunas circunstancias como por ejemplo cuando estamos construyendo un layout con columnas.
+
+## Margenes Colapsados
+
+Cuando el margin bottom de un elemento es adyacente al margin top de otro elemento, estos se superponen para formar un margen unico. Esto es llamado *collapsing*.
+
+### Margenes colapsado entre texto 
+
+La principal razon para el colapsado de margenes tiene que ver con el espaciado de bloques de texto. Los parrafos \<p> , estos por defecto tienen un margen de 1em tanto para el top como para el bottom. Esto es aplicado por el User Agent StyleSheet. Pero cuando apilamos 2 parrafos uno encima del otro los margenes no se suman para dar un resultado de 2em sino que se colapsan para producir un espacio de solo 1 em entre los 2. El tamano del espacio generado es igual al margen mas grande de los 2 elementos colapsados.
+
+### Colapsando multiples margenes
+
+Los elementos no tienen que ser hermano adjacentes para que se colpase, si los elementos estan encerrados en diferentes contenedores sucedera lo mismo. en resumen sucedera lo mismo con cualquier margen adyacente.
+
+## Espaciado de elementos dentro de un contenedor
+
+La relacion entre padding de un contenedor y margenes de sus elementos puede ser algo delicada de tratar.
