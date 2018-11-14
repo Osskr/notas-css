@@ -124,3 +124,17 @@ Los elementos no tienen que ser hermano adjacentes para que se colpase, si los e
 ## Espaciado de elementos dentro de un contenedor
 
 La relacion entre padding de un contenedor y margenes de sus elementos puede ser algo delicada de tratar.
+
+### Lobotomized Owl
+
+sirve para evitar el desnivel en margenes dado por el colapsado del margen de un elemento con el contenedor
+
+```css
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+```
+
+> Nota en un futuro voy actuzalizar mas informacion sobre este tema.

@@ -15,6 +15,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body * + * {
+    margin-top: 1.5em;
+}
+
 .container{
     width: 100%;
     display: flex;
@@ -42,6 +46,7 @@ body{
     border-radius: .5em;
     padding: 1.5em;
     margin-left: 1em;
+    margin-top: 0;
     
 }
 
@@ -77,3 +82,9 @@ body{
 }
 
 
+.sponsor-link{
+    display: block;
+    color: #0090c9;
+    text-decoration: none;
+    font-weight: bold;
+}
