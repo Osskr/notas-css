@@ -46,7 +46,7 @@ Podemos controlar exactamente el contenido que se rebase del contenedor, con la 
 - _scroll_: Se agrega una barra de scroll al contenedor , asi el usuario puede ver el contenido que se sobrepasa.  En algunos sistemas se agregan barras horizontales y verticales, incluso si el contenido es totalmente visible. En este caso las barras no se podran utilizar
 - _auto_: Las barras de scroll se agregan solo si el contenido sobrepasa el contenedor.
 
- Seamos cautos con el uso de *scrolls* ya que esto puede resultar un poco tedioso y frustrante para los usuarios. 
+ Seamos cautos con el uso de *scrolls* ya que esto puede resultar un poco tedioso y frustrante para los usuarios.
 
  >**Overflow Horizontal**:  Es posible que el contenido sobrepase el contenedor horizontalmente (por ejemplo un URL muy larga). En este caso se aplican las mismas reglas  que con el overflow vertical. Podemos controlar solo la parte horizontal del overflow utilizando la propiedad *overflow-x* o la vertical utilizando *overflow-y*, estas propiedades soportan los mismos valores que la propiedad *overflow*. Pero usar x e y juntas puede tener resultados impredecibles.
 
@@ -113,7 +113,7 @@ Los margenes negativos no son usados a menudo pero pueden ser utiles en algunas 
 
 Cuando el margin bottom de un elemento es adyacente al margin top de otro elemento, estos se superponen para formar un margen unico. Esto es llamado *collapsing*.
 
-### Margenes colapsado entre texto 
+### Margenes colapsado entre texto
 
 La principal razon para el colapsado de margenes tiene que ver con el espaciado de bloques de texto. Los parrafos \<p> , estos por defecto tienen un margen de 1em tanto para el top como para el bottom. Esto es aplicado por el User Agent StyleSheet. Pero cuando apilamos 2 parrafos uno encima del otro los margenes no se suman para dar un resultado de 2em sino que se colapsan para producir un espacio de solo 1 em entre los 2. El tamano del espacio generado es igual al margen mas grande de los 2 elementos colapsados.
 
@@ -138,3 +138,4 @@ body * + * {
 ```
 
 > Nota en un futuro voy actuzalizar mas informacion sobre este tema.
+
