@@ -54,3 +54,4 @@ Aun asi existen algunos comportamientos de estos que nos pueden traer problemas,
 
 ### colapsado de contenedores
 
+Un problema muy grande con los floats es que a diferencia de los elementos en el flujo normal del documento, estos no agregan height a sus contenedores padres. Esto puede parecer raro pero es debido al proposito original de los floats.
