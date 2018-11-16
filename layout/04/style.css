@@ -39,6 +39,10 @@ header{
     border-radius: .5em;
 }
 
+.main h2{
+    margin-bottom: 1em;
+}
+
 .clearfix::after{
     display: block;
     content:" ";
@@ -47,7 +51,8 @@ header{
 
 .media{
     float:left;
-    width: 50%;
+    width: calc(50% - 1.5em);
+    margin: 0 1.5em  1.5em 0;
     background-color:darkslategray;
     padding: 1.5em;
     border-radius: .5em;
@@ -56,4 +61,15 @@ header{
 
 .media-img{
     float: left;
+    margin-right: 1.5em;
 }
+
+
+.media-body {
+    overflow: auto;
+      margin-top: 0;
+}
+.media-body h4 {
+      margin-top: 0;
+}
+
