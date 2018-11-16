@@ -55,3 +55,6 @@ Aun asi existen algunos comportamientos de estos que nos pueden traer problemas,
 ### colapsado de contenedores
 
 Un problema muy grande con los floats es que a diferencia de los elementos en el flujo normal del documento, estos no agregan height a sus contenedores padres. Esto puede parecer raro pero es debido al proposito original de los floats.
+Una manera en que podemos corregir esto es con la propiedad *clear*. Si colocamos un elemento al final del contenedor y luego agregamos la propiedad clear esto causara que el contenedor se expanda hasta la parte inferior de los floats.
+
+Si utilizamos un selecto de *pseudoelemento : : after* podemos insertar un elemento en el DOM al final del contenedor, sin declararlo en el HTML
