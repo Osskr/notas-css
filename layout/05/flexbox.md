@@ -16,3 +16,21 @@ Los items van posicionados a lo largo de un eje llamado *main-axis* (eje princip
 
 > *Nota* debido a que flexbox es definido en terminos de ejes *main-axis* *cross-axis* evitaremos el uso de left, rigth , top ,bottom y en cambio utilizaremos start y end.
 
+### Construyendo un menu basico con flexbox
+
+Para construir este menu debemos considerar cual de los elementos debe ser el flex container  y con eso en mente luego podemos pensar en los flex items.
+
+!["layout-flexbox-2"](/resources\layout-flexbox-2.png)
+
+el maquetado HTML es el siguiente:
+```html
+ <ul class="site-nav">
+               <li>item1</li>
+               <li>item2</li>
+               <li>item3</li>
+               <li>item4</li>
+               <li class="nav-rigth">item5</li>
+           </ul>
+```
+
+en el caso de este menu el *flex-container* debe ser el elemento *\<ul>* ya que es el padre de los elementos  *\<ul>* que seran los *flex-items*
