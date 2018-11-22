@@ -1,0 +1,27 @@
+:root{
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+*,
+::after,
+::before{
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #709b90;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+.container{
+    width: 1080px;
+    margin: 0 auto;
+}
+
