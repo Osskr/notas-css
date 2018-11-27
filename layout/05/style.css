@@ -25,3 +25,49 @@ body * + * {
     margin: 0 auto;
 }
 
+.flex{
+    display: flex;
+}
+
+.flex > * + * {
+    margin-top: 0;
+    margin-left: 1.5em;
+}
+
+.column-main{
+    flex:2;
+}
+
+.column-sidebar{
+    flex:1;
+}
+.tile{
+    background-color: aliceblue;
+    padding: 1.5em;
+}
+
+.site-nav{
+    display: flex;
+    padding: .5em;
+    list-style: none;
+    background-color: #5f4b44;
+}
+
+.site-nav > li {
+    margin-top: 0;
+}
+
+.site-nav > li > a{
+    color: white;
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background-color: #cc6b5a;
+}
+.site-nav > li + li{
+    margin-left: 1.5em;
+}
+
+.site-nav > .nav-rigth {
+    margin-left: auto;
+}

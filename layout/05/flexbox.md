@@ -24,13 +24,47 @@ Para construir este menu debemos considerar cual de los elementos debe ser el fl
 
 el maquetado HTML es el siguiente:
 ```html
- <ul class="site-nav">
-               <li>item1</li>
-               <li>item2</li>
-               <li>item3</li>
-               <li>item4</li>
-               <li class="nav-rigth">item5</li>
+     <ul class="site-nav">
+               <li><a href="">Home</a> </li>
+               <li><a href="">Features</a> </li>
+               <li><a href="">Pricing</a> </li>
+               <li><a href="">Support</a> </li>
+               <li class="nav-rigth"><a href="">About</a> </li>
            </ul>
 ```
 
-en el caso de este menu el *flex-container* debe ser el elemento *\<ul>* ya que es el padre de los elementos  *\<ul>* que seran los *flex-items*
+en el caso de este menu el *flex-container* debe ser el elemento *\<ul>* ya que es el padre de los elementos  *\<ul>* que seran los *flex-items*. Lo primero que hacemos es aplicar *display: flex* a la clase *site-nav*, tambien agregamos otros estilos adicionales 
+
+```css
+.container{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.site-nav{
+    display: flex;
+    padding: .5em;
+    list-style: none;
+    background-color: #5f4b44;
+}
+
+.site-nav > li {
+    margin-top: 0;
+}
+
+.site-nav > li > a{
+    color: white;
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background-color: #cc6b5a;
+}
+.site-nav > li + li{
+    margin-left: 1.5em;
+}
+
+.site-nav > .nav-rigth {
+    margin-left: auto;
+}
+```
+
