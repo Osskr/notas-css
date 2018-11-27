@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+.flex{
+    display: flex;
+}
+
+.column-a{
+    flex: 2;
+    background-color: blue;
+    padding: 1em;
+}
+
+
+.column-b{
+    flex: 1;
+    background-color: red;
+    padding: 1em;
+}
