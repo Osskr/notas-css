@@ -153,3 +153,7 @@ la propiedad *flex-shrink* sigue un principio similar a *flex-grow*. Despues de 
 !["layout-flexbox-8"](/resources/layout-flexbox-8.png)
 
 El valor de *flex-shrink* determinara cuando y cuanto un elemento debe encongerse para prevenir un overflow. Si un elemento tiene un valor de *flex-shrink:0* este no se encogera. Los items con un valor distinto de cero para *flex-shrink* se encogeran hasta que no haya overflow. Los elementos con valores mas grandes se encogeran mas que los elementos con valores mas bajos.
+
+## flex-direction
+
+Otra opcion importante de flexbox es la habilidad para cambiar la direccion de sus ejes.  La propiedad *flex-direction* aplicada al flex container controla esto.
