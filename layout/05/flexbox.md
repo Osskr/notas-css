@@ -156,4 +156,25 @@ El valor de *flex-shrink* determinara cuando y cuanto un elemento debe encongers
 
 ## flex-direction
 
-Otra opcion importante de flexbox es la habilidad para cambiar la direccion de sus ejes.  La propiedad *flex-direction* aplicada al flex container controla esto.
+Otra opcion co de flexbox es la habilidad para cambiar la direccion de sus ejes.  La propiedad *flex-direction* aplicada al flex container controla esto.
+Su valor inicial *(row)* hace que los elementos fluyan de **izquierda a derecha** , en cambio si aplicamos *flex-direction:column* los elementos se apilaran verticalmente de **arriba hacia abajo**.Flexbox tambien soporta *flex-direction:row-reverse* que hace fluir los elementos de **derecha a izquierda** y *flex-direction:column-reverse* que hace fluir a los elementos de **abajo hacia arriba**
+
+## Alineacion espaciado y otros detalles
+
+### flex-wrap
+
+la propiedad *flex-wrap*  permite a los flex items saltar a una nueva fila. esta puede ser definida como *nowrap* (valor inicial) , *wrap, wrap-reverse*. cuando el wrapping esta activado los items no se encogen de acuerdo a los valores de *flex-shrink*. En cambio cada elemento que sobrepase el contenedor , saltara a una nueva linea.
+
+Si la direccion del main-axis es *column* o *column-reverse*  entonces *flex-wrap* permitira a los elementos saltar a una nueva columna. De todas maneras esto solo va suceder si hay algo que este limitando la altura del contenedor, de otra manera este crecera para contener a sus flex-items.
+
+### flex-flow
+
+*flex-flow* es un atajo para las propiedades  *flex-direction* y *flex-wrap* , por ejemplo *flex-flow: column wrap* establece que los flex-items van a fluir de arriba a hacia abajo , saltando a otra columna si es necesario.
+
+### justify-content 
+
+la propiedad *justify-content* controla como los items son espaciados a lo largo del main axis si no llenan el ancho del contenedor. los valores soportados incluyen unos nuevos keywords: *flex-start , flex-end , center , space-between* y *space-around*. Un valor de *flex-start* (por defecto)  apila los elementos desde el inicio del main-axis. no habra espacio entre los items a menos que se especifique un margen, Un valor de *flex-end* los apila al final del main-axis, y un valor de *center* los centra.
+El valor *space-between* pone el primer elemento al comienzo del main-axis y el ultimo elemento al final, los elementos restantes van posicionados entre estos.
+El valor *space-around* es similar a *space-between* pero deja un espacio antes del primer elemento y al final del ultimo elemento.
+
+El espaciado es aplicado despues de que los margenes y el *flex-grow* sean calculados, esto significa que si algun item  tiene un valor distinto de cero de *flex-grow* o algun item tiene un valor de margin *auto*  en el main-axis. entonces *justify-content* no tendra efecto.
