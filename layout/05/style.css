@@ -44,7 +44,7 @@ body * + * {
     flex-direction: column;
 }
 .tile{
-    background-color: aliceblue;
+    background-color: white;
     padding: 1.5em;
 }
 
@@ -74,6 +74,43 @@ body * + * {
     padding: .5em 1em;
     cursor: pointer;
 }
+
+.centered{
+    text-align: center;
+}
+
+.cost{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    line-height: .7;
+}
+
+.cost > span {
+    margin-top: 0;
+}
+
+.cost-currency {
+    font-size: 2rem;
+}
+
+.cost-dollars {
+    font-size: 4rem;
+}
+
+.cost-cents {
+    font-size: 1.5rem;
+    align-self: flex-start;
+}
+
+.cta-button{
+    display: block;
+    background-color: #cc6b5a;
+    padding: 0.5em 1em;
+    color:white;
+    text-decoration:none; 
+}
+
 
 .site-nav{
     display: flex;

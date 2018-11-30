@@ -4,13 +4,15 @@
 .flex{
     display: flex;
     color:white;
-    justify-content: space-between;    
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;  
 }
 
 .column-a{
     
     background-color: rgb(50, 50, 151);
-    padding: 1em;
+    padding: 3em;
 }
 
 
@@ -18,4 +20,5 @@
     
     background-color: rgb(252, 143, 143);
     padding: 1em;
+    font-size: .5rem;
 }

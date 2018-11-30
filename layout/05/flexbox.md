@@ -171,10 +171,36 @@ Si la direccion del main-axis es *column* o *column-reverse*  entonces *flex-wra
 
 *flex-flow* es un atajo para las propiedades  *flex-direction* y *flex-wrap* , por ejemplo *flex-flow: column wrap* establece que los flex-items van a fluir de arriba a hacia abajo , saltando a otra columna si es necesario.
 
-### justify-content 
+### justify-content
 
 la propiedad *justify-content* controla como los items son espaciados a lo largo del main axis si no llenan el ancho del contenedor. los valores soportados incluyen unos nuevos keywords: *flex-start , flex-end , center , space-between* y *space-around*. Un valor de *flex-start* (por defecto)  apila los elementos desde el inicio del main-axis. no habra espacio entre los items a menos que se especifique un margen, Un valor de *flex-end* los apila al final del main-axis, y un valor de *center* los centra.
 El valor *space-between* pone el primer elemento al comienzo del main-axis y el ultimo elemento al final, los elementos restantes van posicionados entre estos.
 El valor *space-around* es similar a *space-between* pero deja un espacio antes del primer elemento y al final del ultimo elemento.
 
 El espaciado es aplicado despues de que los margenes y el *flex-grow* sean calculados, esto significa que si algun item  tiene un valor distinto de cero de *flex-grow* o algun item tiene un valor de margin *auto*  en el main-axis. entonces *justify-content* no tendra efecto.
+
+### align-items
+
+Mientras que *justify-content* controla la alineacion de los items a lo largo del main-axis *align-items*  controla su alineamiento a lo largo del cross-axis. El valor inicial es *strech*, lo que causa que todos los items llenen la altura del contenedor en un row layout , o el ancho en un column layuout. Provee columnas de una misma altura.
+Los otros valores le permiten a los flex-items crecer naturalmente en vez de llenar el contenedor.(es un concepto similar al de *vertical-align* )
+
+* **flex-start** y *flex-end* alinean los elementos a lo largo de inicio o el final del cross-axis (top o bottom de una fila)
+* **center** centra los items.
+* **baseline** alinea los items respecto de la linea de base de sus textos. Este es muy util si queremos que por ejemplo el texto de un flex-item en un header con una fuente grande, este alineado con otro item que contenga una fuente mas pequena.
+
+### align-content
+
+Si permitimos los saltos de linea *flex-wrap* esta propiedad controla el espaciado de cada fila dentro del contenedor flex a lo largo del cross-axis. los valores soportados son *flex-start , flex-end , center , strech (valor inicial), space-between y space-around. Estos valores aplican un comportamiento similar al visto en *justify-content*.
+
+### align-self 
+
+Esta propiedad controla un flex-item a lo largo del cross-axis del contendor. Cumple la misma funcion que *align-items* , excepto que nos permite alinear individualmente los items de manera diferente. Soporta los mismos valores que *align-items*
+
+### order 
+
+Normalmente los flex-items estan distribuidos con un orden dispuesto por el HTML. Estan apilados a lo largo del main axis, comenzando por el inicio del main-axis. Utilizando la propiedad *order* podemos alterar este orden que tienen en la pila. Podemos especificar un numero entero positivo o negativo. Si multiples items tienen el mismo numero de orden estos apareceran segun su orden en el html.
+
+Inicialmente todos los flex-items tienen un valor de 0 esto quiere decir que si cambiamos a -1 el orden de un item este se movera al inicio de la pila  y un valor de 1 lo movera al final. Podemos especificar los numeros que  para cada elemento y asi darle el orden que queramos. Los numero no necesariamente tienen que ser consecutivos.
+
+> **Nota** tener cuidado con el uso de esta propiedad, ya que alterar el orden de los elementos de manera visual, tendra una diferencia con el orden establecido en el codigo, lo que puede llegar a presentar problemas con la accesibilidad de nuestro sitio. La navegacion usando la tecla Tab va a seguir el orden establecido en el codigo HTML en la mayoria de los navegadores lo que puede llegar a ser confuso. Tambien los lectores de pantalla para personas con problemas visuales, seguiran el orden del codigo en la mayoria de los navegadores.
+
