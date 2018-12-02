@@ -1,0 +1,15 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0.5em;
+}
+
+.grid > * {
+    background-color: lightblue;
+    color: black;
+    padding: 2em;
+    border-radius: 0.5em;
+    text-align: center;
+    font-size: 1.5rem;
+}
