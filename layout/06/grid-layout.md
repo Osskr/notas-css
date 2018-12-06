@@ -148,8 +148,23 @@ En este ejemplo la primera fila es asignada al area *title* , la segunda fila es
 Tambien podemos dejar una celda vacia poniendo un punto  ( *.* ) como su nombre. Como vemos en el siguiente codigo
 
 ```css
-grid-template-areas: "top top right"
-"left . right"
-"left bottom bottom";
-
+grid-template-areas:    "top top right"
+                        "left . right"
+                        "left bottom bottom";
 ```
+
+Cuando disenamos un grid, debemos usar la sintaxis con la que estemos mas comodos dado el diseno. grid-lines, named grid-lines o named-grid-areas. Estas ultimas son muy utiles cuando sabemos en que lugar exacto va colocado cada elemento.
+
+## Grids Explicitos e Implicitos
+
+En algunos casos, no podemos saber con exactitud donde queremos colocar cada unos de los items de un grid. Quizas estemos trabajando con un largo numero de grid-items y colocar cada uno  explicitamente puede llegar a ser algo dificil de manejar. O incluso puede que no sepamos la cantidad de items que tengamos que colocar, si es que estamos trayendo datos de una base de datos. En estos casos quizas sea mas conveniente definir vagamente un grid y permitirle al algoritmo de posicionamiento  que lo complete por nosotros.
+Esto va requerir que deleguemos en un *implict-grid*. 
+Cuando usamos las propiedades *grid-template-* para definir grid-tracks estamos creando un *explicit-grid*.
+Pero los grid-items de todas manera pueden ser colocados fuera de esos grid-tracks; En este caso tracks implicitos seran automaticamente generados, expandiendo el grid para que pueda contener esos elementos.
+
+!["layout-gridlayout-4"](/resources\layout-gridlayout-4.png)
+
+>***Nota* Los grid tracks implicitos  no cambian los numeros negativos cuando se refiere a los grid-lines.
+Los numeros negativos se siguen mantiendo en el bottom/right del grid explicito.
+
+Para ejemplificar esto, vamos a construir un layout de tipo portfolio para fotografia como el que se ve a continuacion:
