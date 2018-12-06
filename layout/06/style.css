@@ -1,8 +1,8 @@
 .grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: [start] 300px [second] 1fr [third] 1fr [end];
     grid-template-rows: 1fr 1fr;
-    grid-gap: 0.5em;
+    grid-gap: 0.5em 1em;
 }
 
 .grid > * {
