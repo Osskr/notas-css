@@ -9,13 +9,14 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Don Corleone web Page</h1>
+    <header class="top-banner">
+     <div> <h1>Don Corleone web Page</h1>
         <ul class="nav-bar">
             <li class="nav-bar-element"><a href="">Home</a></li>
             <li class="nav-bar-element"><a href="" id="open">Modal</a></li>
             <li class="nav-bar-element"><a href="">Contacto</a></li>
         </ul>
+    </div>
     </header>
 
     <div class="modal" id="modal">
@@ -35,19 +36,58 @@
         </div>
     </div>
 
+    <div class="container">
+        <nav>
+            <div class="dropdown">
+                <div class="dropdown-label">Main Menu</div>
+                    <div class="dropdown-menu">
+                        <ul class="submenu">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/coffees">Coffees</a></li>
+                            <li><a href="/brewers">Brewers</a></li>
+                            <li><a href="/specials">Specials</a></li>
+                            <li><a href="/about">About us</a></li>
+                        </ul>
+                    </div>
+            </div>
+        </nav>
+            <h1>Wombat Coffee Roasters</h1>
+    </div>
+    <h1>Contenedores Relativos</h1>
+
+
+    <div class="container-relative">
+     <div class="box box-1">1</div>
+     <div class="box box-2">2</div>
+     <div class="box box-3">3</div>
+     <div class="box box-4">4</div>
+    </div>
+
+    <div class="cookies" id="cookies">
+        <p>Este sitio usa cookies presiona cerrar para seguir navegando</p>
+        <span id="close-cookies" class="close-cookies">X</span>
+    </div>
+
     <script type="text/javascript">
         var button = document.getElementById('open');
         var close = document.getElementById('close');
         var modal = document.getElementById('modal');
+        const cookies = document.getElementById('cookies');
+        const btnCookies = document.getElementById('close-cookies');
         button.addEventListener('click', function (event) {
         event.preventDefault();
         modal.style.display = 'block';
         });
+
         close.addEventListener('click', function (event) {
         event.preventDefault();
         modal.style.display = 'none';
-        
         });
+
+        btnCookies.addEventListener('click',(e)=>{
+            e.preventDefault()
+            cookies.style.display = 'none'
+        })
         </script>
 </body>
 </html>
