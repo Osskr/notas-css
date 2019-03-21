@@ -8,6 +8,81 @@
     <title>Document</title>
 </head>
 <body>
+    <header id="header" class="page-header">
+        <div class="title">
+                <h1>Responsive design</h1>
+                <div class="slogan">Do it responsive</div>
+        </div>
+    </header>
+    <nav class="menu" id="main-menu">
+        <button class="menu-toggle" id="toggle-menu">
+            toggle-menu
+        </button>
+        <div class="menu-dropdown">
+            <ul class="nav-menu">
+                <li><a href="/about">About</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/brew">Brew</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <aside class="hero" id="hero">
+    Lorem ipsum dolor sit amet, consectetur adipi
+    sicing elit. Perferendis illum nesciunt tempor
+    ibus tempora cosequuntur quis maiores assume
+    nda debitis dignissimos cupiditate, libero exe
+    rcitationem. Beatae animi asperiores aliquid ap
+    </aside>
+
+    <main id="main">
+        <div class="row">
+            <section class="column">
+                <h2 class="subtitle">Single-origin</h2>
+                <p>Lorem ipsum dolor sit amet consectetur
+                     adipisicing elit. Iste officiis exerc
+                     itationem voluptatibus provident unde 
+                     laudantium similique, consequuntur pe
+                     rspiciatis ratione nisi blanditiis te
+                     mporibus nemo atque! Excepturi repreh
+                     enderit labore eum necessitatibus amet.
+                </p>
+            </section>
+            <section class="column">
+                    <h2 class="subtitle">Blend</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur
+                         adipisicing elit. Iste officiis exerc
+                         itationem voluptatibus provident unde 
+                         laudantium similique, consequuntur pe
+                         rspiciatis ratione nisi blanditiis te
+                         mporibus nemo atque! Excepturi repreh
+                         enderit labore eum necessitatibus amet.
+                    </p>
+                </section>
+                <section class="column">
+                        <h2 class="subtitle">Equiment</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur
+                             adipisicing elit. Iste officiis exerc
+                             itationem voluptatibus provident unde 
+                             laudantium similique, consequuntur pe
+                             rspiciatis ratione nisi blanditiis te
+                             mporibus nemo atque! Excepturi repreh
+                             enderit labore eum necessitatibus amet.
+                        </p>
+                    </section>
+        </div>
+    </main>
+    
+    <script>
+        (function(){
+            const hamburguerButton = document.getElementById('toggle-menu')
+            hamburguerButton.addEventListener('click',(e)=>{
+                e.preventDefault()
+                const menu =  document.getElementById('main-menu')
+                menu.classList.toggle('is-open')
+            })
+        })();
+    </script>
 </body>
 </html>
