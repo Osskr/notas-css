@@ -13,7 +13,7 @@ Tenemos 3 reglas fundamentales para *responsive design*
 Este principio funciona exactamente como se oye, primero construimos nuestro layout para moviles antes de hacerlo para desktop, esta es la mejor manera de asegurarnos que funcione de las 2 maneras.
 
 ## Media queries
-El segundo componente del diseño responsive son las *media-queries*, estas nos permiten escribir estilos que seran aplicado bajo ciertas condiciones.
+El segundo componente del diseño responsive son las *media-queries*, estas nos permiten escribir estilos que seran aplicados bajo ciertas condiciones.
 
 ```css
 @media (min-width: 560px) {
@@ -25,3 +25,13 @@ El segundo componente del diseño responsive son las *media-queries*, estas nos 
 
 ### Entendiendo los tipos de media queries
 
+combinando media queries
+
+```css
+
+and (and)
+@media (min-width: 20em) and (max-width: 35em) { … }
+
+or (,)
+@media (max-width: 20em), (min-width: 35em) { … }
+```
